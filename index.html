@@ -172,7 +172,7 @@ CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in the output.
             <div class="card p-6 rounded-2xl shadow-xl border border-blue-500/30 text-center">
                 <h3 class="text-xl font-bold text-white mb-2">Study Sessions & Networking</h3>
                 <p class="text-slate-400 mb-6 text-sm">Found this useful? Let's connect and keep the CCNA momentum going.</p>
-                <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors duration-200">
+                <a href="https://www.linkedin.com/in/renatokitamura/" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors duration-200">
                     <span class="mr-2">Connect on LinkedIn</span>
                     <span class="text-xl font-light">→</span>
                 </a>
