@@ -1,287 +1,313 @@
-<!--
-PALETTE: Matrix Emerald (Slate 950 bg, Emerald #10b981, Amber #f59e0b, Blue #3b82f6)
-PLAN: Section 1: Intro to Mental Math. Section 2: Expanded Trade-Off Analysis (/17 to /30). Section 3: The Magic Number Method (Workflow). Section 4: The /24 Baseline Cheat Sheet. Section 5: LinkedIn Profile Link & Attribution.
-CHOICES:
-1. Networks vs Hosts Trade-off -> Goal: Compare -> Grouped Bar Chart with Logarithmic Scale (Chart.js). Justification: Shows the inverse relationship across a massive range (/17 to /30). Using a log scale allows us to see both thousands and single digits clearly. No SVG used.
-2. Magic Number Flow -> Goal: Organize -> HTML/CSS Block Diagram. Justification: Sequential mental math steps are best shown in a clear top-down flow. No SVG used.
-3. Profile Footer -> Goal: Inform -> Styled HTML/CSS anchor. Justification: Provides a clear call-to-action for networking. No SVG used.
-CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in the output.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPv4 Fast Subnetting Mastery</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Renato Kitamura Morao - Professional Portfolio & CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 400px;
-            max-height: 500px;
+        /* Base Styles */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #333333;
+            --bg-color: #f8fafc;
+            --white: #ffffff;
         }
-        @media (max-width: 768px) {
-            .chart-container { height: 300px; }
-        }
+
         body {
-            background-color: #020617;
-            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
         }
-        .card {
-            background-color: #0f172a;
-            border: 1px solid #1e293b;
+
+        h1, h2, h3 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        /* Sections */
+        section {
+            background-color: var(--white);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        /* Experience & Education */
+        .item {
+            margin-bottom: 30px;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .item-date {
+            color: #6b7280;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: #4b5563;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            background-color: #e0e7ff;
+            color: var(--secondary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Call to Action / Footer */
+        .cta-section {
+            text-align: center;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 20px 0 60px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .item-header {
+                flex-direction: column;
+            }
+            .item-date {
+                margin-top: 5px;
+            }
+            section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
-<body class="antialiased selection:bg-emerald-500 selection:text-slate-900">
+<body>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
-        <header class="text-center mb-20">
-            <!-- Increased margin-bottom (mb-12) and added padding-bottom (pb-2) to prevent descender clipping -->
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-12 pb-2 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
-                IPv4 Subnetting: Mental Math Mastery
-            </h1>
-            <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                Time is the primary constraint on the CCNA. By mastering the <strong>Magic Number</strong> method and internalizing common boundaries, you can solve subnetting problems in seconds without a calculator.
-            </p>
-        </header>
-
-        <section class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div class="card p-6 rounded-xl shadow-lg border-t-4 border-t-emerald-500">
-                <div class="text-lg text-slate-300 mb-2 uppercase tracking-wide font-bold">The Golden Rule</div>
-                <div class="text-2xl font-black text-emerald-400">Total = 32 Bits</div>
-                <div class="text-slate-400 text-sm mt-2">Network Bits + Host Bits = 32. Understanding this balance is the key to identifying host capacity instantly.</div>
+    <header>
+        <div class="container">
+            <h1>RENATO KITAMURA MORAO</h1>
+            <div class="title">IT TECHNICAL SUPPORT | CUSTOMER SUPPORT | OPERATIONS</div>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:renatokmontreal@gmail.com">renatokmontreal@gmail.com</a></span>
+                <span>📱 +1 (438) 526-1234</span>
+                <span>📍 Brossard, QC</span>
+                <span>🔗 <a href="https://linkedin.com/in/renatokitamura" target="_blank">linkedin.com/in/renatokitamura</a></span>
             </div>
-            <div class="card p-6 rounded-xl shadow-lg border-t-4 border-t-amber-500">
-                <div class="text-lg text-slate-300 mb-2 uppercase tracking-wide font-bold">Usable Hosts Formula</div>
-                <div class="text-2xl font-black text-amber-400">2<sup class="text-lg">h</sup> - 2</div>
-                <div class="text-slate-400 text-sm mt-2">Always subtract 2: one for the Network ID (all 0s in host bits) and one for the Broadcast (all 1s).</div>
-            </div>
-            <div class="card p-6 rounded-xl shadow-lg border-t-4 border-t-blue-500">
-                <div class="text-lg text-slate-300 mb-2 uppercase tracking-wide font-bold">The Constant</div>
-                <div class="text-2xl font-black text-blue-400">256</div>
-                <div class="text-slate-400 text-sm mt-2">256 is the magic ceiling of a single octet. It is the anchor for all mental subtraction and block size calculation.</div>
-            </div>
-        </section>
-
-        <section class="card p-8 rounded-2xl shadow-xl mb-12">
-            <h2 class="text-2xl font-bold text-white mb-2">The Trade-Off: Subnets vs. Hosts (/17 to /30)</h2>
-            <p class="text-slate-400 mb-8 text-sm">
-                This visualization demonstrates the inverse relationship between network count and host capacity across two octets. Note: This chart uses a <strong>Logarithmic Scale</strong> to accurately represent values ranging from 2 to over 32,000 on the same axis.
-            </p>
-            <div class="chart-container">
-                <canvas id="tradeOffChart"></canvas>
-            </div>
-            <div class="mt-6 text-center text-slate-500 text-xs italic">
-                *Subnet count is calculated based on a Class B (/16) baseline for /17-/23 and a Class C (/24) baseline for /25-/30.
-            </div>
-        </section>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            
-            <section class="card p-8 rounded-2xl shadow-xl border border-emerald-500/30">
-                <h2 class="text-2xl font-bold text-emerald-400 mb-4">Fast Trick #1: The "Magic Number" Method</h2>
-                <p class="text-slate-400 mb-8 text-sm">
-                    This is the fastest mental math approach. If you are given <span class="text-white font-mono bg-slate-800 px-2 py-0.5 rounded">172.16.50.100/27</span>, solve it without writing a single bit:
-                </p>
-
-                <div class="space-y-6">
-                    <div class="flex items-start">
-                        <div class="bg-blue-500 text-white font-bold rounded-full min-w-[2rem] h-8 flex items-center justify-center mr-4">1</div>
-                        <div>
-                            <h4 class="text-blue-400 font-bold">Convert CIDR to Mask</h4>
-                            <p class="text-slate-300 text-sm">A /27 is 3 bits into the octet. <span class="text-white font-mono">128+64+32 = 224</span>.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-amber-500 text-white font-bold rounded-full min-w-[2rem] h-8 flex items-center justify-center mr-4">2</div>
-                        <div>
-                            <h4 class="text-amber-400 font-bold">Find the Magic Number</h4>
-                            <p class="text-slate-300 text-sm">Subtract from 256. <span class="text-white font-mono">256 - 224 = 32</span>. This is your block size.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-emerald-500 text-white font-bold rounded-full min-w-[2rem] h-8 flex items-center justify-center mr-4">3</div>
-                        <div>
-                            <h4 class="text-emerald-400 font-bold">Identify the Range</h4>
-                            <p class="text-slate-300 text-sm">Find the multiple of 32 closest to 100 without going over. <span class="text-white font-mono">0, 32, 64, 96</span>. The network is <strong>.96</strong>.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="card p-8 rounded-2xl shadow-xl">
-                <h2 class="text-2xl font-bold text-blue-400 mb-4">Fast Trick #2: The /24 Anchor</h2>
-                <p class="text-slate-400 mb-6 text-sm">
-                    Memorize these common values. In the exam, most questions occur in the 4th octet. Being able to recall these instantly saves minutes.
-                </p>
-                <div class="overflow-hidden rounded-lg border border-slate-700">
-                    <table class="w-full text-left text-xs font-mono">
-                        <thead>
-                            <tr class="bg-slate-800 text-slate-300">
-                                <th class="p-3 border-b border-slate-700">CIDR</th>
-                                <th class="p-3 border-b border-slate-700">Mask</th>
-                                <th class="p-3 border-b border-slate-700">Hosts</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-400">
-                            <tr class="border-b border-slate-700 hover:bg-slate-800/40">
-                                <td class="p-3 font-bold text-blue-400">/25</td>
-                                <td class="p-3">.128</td>
-                                <td class="p-3 text-emerald-400">126</td>
-                            </tr>
-                            <tr class="border-b border-slate-700 hover:bg-slate-800/40">
-                                <td class="p-3 font-bold text-blue-400">/26</td>
-                                <td class="p-3">.192</td>
-                                <td class="p-3 text-emerald-400">62</td>
-                            </tr>
-                            <tr class="border-b border-slate-700 hover:bg-slate-800/40">
-                                <td class="p-3 font-bold text-blue-400">/27</td>
-                                <td class="p-3">.224</td>
-                                <td class="p-3 text-emerald-400">30</td>
-                            </tr>
-                            <tr class="border-b border-slate-700 hover:bg-slate-800/40">
-                                <td class="p-3 font-bold text-blue-400">/28</td>
-                                <td class="p-3">.240</td>
-                                <td class="p-3 text-emerald-400">14</td>
-                            </tr>
-                            <tr class="border-b border-slate-700 hover:bg-slate-800/40">
-                                <td class="p-3 font-bold text-blue-400">/29</td>
-                                <td class="p-3">.248</td>
-                                <td class="p-3 text-emerald-400">6</td>
-                            </tr>
-                            <tr class="hover:bg-slate-800/40">
-                                <td class="p-3 font-bold text-blue-400">/30</td>
-                                <td class="p-3">.252</td>
-                                <td class="p-3 text-emerald-400">2</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
         </div>
+    </header>
 
-        <footer class="mt-12">
-            <div class="card p-6 rounded-2xl shadow-xl border border-blue-500/30 text-center">
-                <h3 class="text-xl font-bold text-white mb-2">Study Sessions & Networking</h3>
-                <p class="text-slate-400 mb-6 text-sm">Found this useful? Let's connect and keep the CCNA momentum going.</p>
-                <a href="https://www.linkedin.com/in/renatokitamura/" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors duration-200">
-                    <span class="mr-2">Connect on LinkedIn</span>
-                    <span class="text-xl font-light">→</span>
-                </a>
-                <p class="text-slate-500 text-xs mt-6 font-medium tracking-wide">
-                    Made by Renato Kitamura Morao using Gemini
-                </p>
+    <div class="container">
+        <section>
+            <h2>Professional Summary</h2>
+            <p>
+                Customer-focused IT support professional transitioning from operations into technical support, with a Google IT Support Professional Certificate and current AEC studies in Cisco CCNA and CompTIA Linux+ at Dawson College. Brings hands-on knowledge of Windows, Linux, networking fundamentals, Active Directory, remote troubleshooting, and technical documentation, along with strong experience resolving issues calmly and communicating clearly in fast-paced environments. Eager to contribute to a remote SaaS support team by delivering accurate troubleshooting, empathetic service, strong documentation, and clear client communication.
+            </p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Technical Support</span>
+                <span class="skill-tag">Windows 10/11 & Linux CLI</span>
+                <span class="skill-tag">macOS, Android, iOS</span>
+                <span class="skill-tag">Active Directory</span>
+                <span class="skill-tag">TCP/IP, DNS, DHCP</span>
+                <span class="skill-tag">SOP Creation</span>
+                <span class="skill-tag">RDP & TeamViewer</span>
             </div>
-        </footer>
+            <ul>
+                <li><strong>Linux:</strong> Installed multiple Linux distributions in virtual machines; configured Samba, Apache, and Dovecot; wrote basic shell scripts for system administration and troubleshooting.</li>
+                <li><strong>Networking:</strong> TCP/IP, DNS, DHCP, IPv4/IPv6, Wi-Fi standards, intermediary router and switch configuration, connectivity testing using ping, tracert, and nslookup.</li>
+                <li><strong>System Administration:</strong> Active Directory user account management, password policies, NTFS permissions, MFA, firewall basics.</li>
+                <li><strong>Languages:</strong> English (Fluent), Portuguese (Native), Spanish (Fluent), French (Intermediate).</li>
+            </ul>
+        </section>
 
+        <section>
+            <h2>Projects & Home Labs</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Virtualization & Active Directory Home Lab</div>
+                </div>
+                <ul>
+                    <li>Built a Windows Server lab in VirtualBox to simulate a business IT environment and practice technical support tasks.</li>
+                    <li>Configured an Active Directory domain controller and managed users, groups, and password policies. Configured Outlook account using Dovecot to link it to Linux weserver.</li>
+                    <li>Simulated connectivity and troubleshooting scenarios using command-line tools including ping, tracert, and nslookup.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Kitchen Manager / Sous-Chef</div>
+                    <div class="item-date">April 2022 – Present</div>
+                </div>
+                <div class="item-subtitle">Zante Restaurant, Montreal, QC</div>
+                <ul>
+                    <li>Resolved operational and customer-facing issues in a high-pressure environment by identifying root causes, prioritizing actions, and restoring workflow quickly.</li>
+                    <li>Created and maintained standard operating procedures and training materials, improving consistency and helping new team members learn processes faster.</li>
+                    <li>Coordinated with external vendors and repair contacts when equipment issues occurred, tracked progress, and followed through until resolution.</li>
+                    <li>Handled escalated customer concerns with patience, professionalism, and clear communication, helping maintain strong service quality and customer satisfaction.</li>
+                    <li>Maintained organized records and daily operational accuracy, supporting reliable service and effective team coordination.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education & Certifications</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">AEC Preparation for Cisco CCNA & CompTIA Linux+ Certification</div>
+                    <div class="item-date">March 2026 – Present</div>
+                </div>
+                <div class="item-subtitle">Dawson College, Montreal, QC</div>
+                <ul>
+                    <li>Receiving hands-on training in network design, configuration, troubleshooting, Linux administration, and technical client support.</li>
+                    <li>Building practical skills in diagnosing connectivity and system issues in lab-based environments aligned with entry-level support roles.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Google IT Support Professional Certificate</div>
+                    <div class="item-date">Completed October 2025</div>
+                </div>
+                <ul>
+                    <li>Completed training in IT support fundamentals, networking, operating systems, system administration, and IT security.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Microsoft Azure Fundamentals (AZ-900) | AI on Azure Microsoft</div>
+                    <div class="item-date">Completed January 2025</div>
+                </div>
+                <ul>
+                    <li>Validated knowledge of core cloud concepts, Azure services, pricing models, governance, security, and shared responsibility.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Additional Information</h2>
+            <p>Strong interest in technical troubleshooting, home networking, PC building, and continuous IT learning. Currently pursuing skills relevant to client support, issue resolution, and junior network support roles through formal study and home lab practice.</p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to work together?</h2>
+            <p>I am currently open to new opportunities. Let's connect!</p>
+            <a href="mailto:renatokmontreal@gmail.com" class="btn" style="background-color: var(--text-color);">✉️ Send an Email</a>
+        </section>
     </div>
 
-    <script>
-        const wrapLabel = (label) => {
-            if (label.length <= 16) return label;
-            const words = label.split(' ');
-            let lines = [];
-            let currentLine = '';
-            words.forEach(word => {
-                if ((currentLine + word).length > 16) {
-                    if (currentLine) lines.push(currentLine.trim());
-                    currentLine = word + ' ';
-                } else {
-                    currentLine += word + ' ';
-                }
-            });
-            if (currentLine) lines.push(currentLine.trim());
-            return lines;
-        };
-
-        const commonTooltipConfig = {
-            callbacks: {
-                title: function(tooltipItems) {
-                    const item = tooltipItems[0];
-                    let label = item.chart.data.labels[item.dataIndex];
-                    if (Array.isArray(label)) {
-                        return label.join(' ');
-                    } else {
-                        return label;
-                    }
-                }
-            }
-        };
-
-        const tradeCtx = document.getElementById('tradeOffChart').getContext('2d');
-        const labels = ['/17', '/18', '/19', '/20', '/21', '/22', '/23', '/24', '/25', '/26', '/27', '/28', '/29', '/30'];
-        
-        const subnets = [2, 4, 8, 16, 32, 64, 128, 1, 2, 4, 8, 16, 32, 64];
-        const hosts = [32766, 16382, 8190, 4094, 2046, 1022, 510, 254, 126, 62, 30, 14, 6, 2];
-
-        new Chart(tradeCtx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Created Subnets',
-                        data: subnets,
-                        backgroundColor: '#3b82f6',
-                        borderRadius: 4,
-                        borderWidth: 1,
-                        borderColor: '#1d4ed8'
-                    },
-                    {
-                        label: 'Usable Hosts Per Subnet',
-                        data: hosts,
-                        backgroundColor: '#10b981',
-                        borderRadius: 4,
-                        borderWidth: 1,
-                        borderColor: '#047857'
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                color: '#f8fafc',
-                scales: {
-                    x: {
-                        grid: { display: false },
-                        ticks: { color: '#94a3b8', font: { family: 'monospace', size: 11 } }
-                    },
-                    y: {
-                        type: 'logarithmic',
-                        min: 1,
-                        grid: { color: '#1e293b' },
-                        ticks: { 
-                            color: '#64748b',
-                            callback: function(value) {
-                                if (value === 1 || value === 10 || value === 100 || value === 1000 || value === 10000 || value === 100000) {
-                                    return value;
-                                }
-                                return null;
-                            }
-                        }
-                    }
-                },
-                plugins: {
-                    tooltip: commonTooltipConfig,
-                    legend: {
-                        position: 'top',
-                        labels: { 
-                            color: '#cbd5e1',
-                            font: { size: 12 },
-                            padding: 20
-                        }
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
