@@ -1,313 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renato Kitamura Morao - Professional Portfolio & CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Base Styles */
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --text-color: #333333;
-            --bg-color: #f8fafc;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            margin-top: 0;
-            color: #111827;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Layout Container */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Section */
-        header {
-            background-color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .title {
-            font-size: 1.2rem;
-            color: #6b7280;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-        }
-
-        /* Sections */
-        section {
-            background-color: var(--white);
-            margin: 40px auto;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        section h2 {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-            display: inline-block;
-        }
-
-        /* Experience & Education */
-        .item {
-            margin-bottom: 30px;
-        }
-
-        .item:last-child {
-            margin-bottom: 0;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 10px;
-        }
-
-        .item-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .item-date {
-            color: #6b7280;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .item-subtitle {
-            font-style: italic;
-            color: #4b5563;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .skill-tag {
-            background-color: #e0e7ff;
-            color: var(--secondary-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* Call to Action / Footer */
-        .cta-section {
-            text-align: center;
-            background-color: transparent;
-            box-shadow: none;
-            padding: 20px 0 60px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 5px;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .item-header {
-                flex-direction: column;
-            }
-            .item-date {
-                margin-top: 5px;
-            }
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renato Kitamura Morao | IT Support Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <div class="container hero">
+      <h1>Renato Kitamura Morao</h1>
+      <h2>Aspiring IT Support Technician | Google IT Support Certified | CCNA Student</h2>
+      <p>
+        I’m an IT support candidate based in Brossard, Québec, transitioning from operations into technical support.
+        I’m currently studying in Dawson College’s AEC program for Cisco CCNA and CompTIA Linux+ preparation, while
+        building hands-on experience through home labs, Linux server configuration, and remote volunteer technical support.
+      </p>
+      <p>
+        My background in fast-paced operations taught me how to stay calm under pressure, solve problems methodically,
+        document processes clearly, and support people with professionalism. I’m now applying those same strengths to
+        help desk, technical support, and junior IT roles.
+      </p>
+      <p><strong>Currently open to new opportunities in help desk, technical support, and junior IT roles.</strong></p>
 
-    <header>
-        <div class="container">
-            <h1>RENATO KITAMURA MORAO</h1>
-            <div class="title">IT TECHNICAL SUPPORT | CUSTOMER SUPPORT | OPERATIONS</div>
-            <div class="contact-info">
-                <span>📧 <a href="mailto:renatokmontreal@gmail.com">renatokmontreal@gmail.com</a></span>
-                <span>📱 +1 (438) 526-1234</span>
-                <span>📍 Brossard, QC</span>
-                <span>🔗 <a href="https://linkedin.com/in/renatokitamura" target="_blank">linkedin.com/in/renatokitamura</a></span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section>
-            <h2>Professional Summary</h2>
-            <p>
-                Customer-focused IT support professional transitioning from operations into technical support, with a Google IT Support Professional Certificate and current AEC studies in Cisco CCNA and CompTIA Linux+ at Dawson College. Brings hands-on knowledge of Windows, Linux, networking fundamentals, Active Directory, remote troubleshooting, and technical documentation, along with strong experience resolving issues calmly and communicating clearly in fast-paced environments. Eager to contribute to a remote SaaS support team by delivering accurate troubleshooting, empathetic service, strong documentation, and clear client communication.
-            </p>
-        </section>
-
-        <section>
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Technical Support</span>
-                <span class="skill-tag">Windows 10/11 & Linux CLI</span>
-                <span class="skill-tag">macOS, Android, iOS</span>
-                <span class="skill-tag">Active Directory</span>
-                <span class="skill-tag">TCP/IP, DNS, DHCP</span>
-                <span class="skill-tag">SOP Creation</span>
-                <span class="skill-tag">RDP & TeamViewer</span>
-            </div>
-            <ul>
-                <li><strong>Linux:</strong> Installed multiple Linux distributions in virtual machines; configured Samba, Apache, and Dovecot; wrote basic shell scripts for system administration and troubleshooting.</li>
-                <li><strong>Networking:</strong> TCP/IP, DNS, DHCP, IPv4/IPv6, Wi-Fi standards, intermediary router and switch configuration, connectivity testing using ping, tracert, and nslookup.</li>
-                <li><strong>System Administration:</strong> Active Directory user account management, password policies, NTFS permissions, MFA, firewall basics.</li>
-                <li><strong>Languages:</strong> English (Fluent), Portuguese (Native), Spanish (Fluent), French (Intermediate).</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Projects & Home Labs</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Virtualization & Active Directory Home Lab</div>
-                </div>
-                <ul>
-                    <li>Built a Windows Server lab in VirtualBox to simulate a business IT environment and practice technical support tasks.</li>
-                    <li>Configured an Active Directory domain controller and managed users, groups, and password policies. Configured Outlook account using Dovecot to link it to Linux weserver.</li>
-                    <li>Simulated connectivity and troubleshooting scenarios using command-line tools including ping, tracert, and nslookup.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Professional Experience</h2>
-            
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Kitchen Manager / Sous-Chef</div>
-                    <div class="item-date">April 2022 – Present</div>
-                </div>
-                <div class="item-subtitle">Zante Restaurant, Montreal, QC</div>
-                <ul>
-                    <li>Resolved operational and customer-facing issues in a high-pressure environment by identifying root causes, prioritizing actions, and restoring workflow quickly.</li>
-                    <li>Created and maintained standard operating procedures and training materials, improving consistency and helping new team members learn processes faster.</li>
-                    <li>Coordinated with external vendors and repair contacts when equipment issues occurred, tracked progress, and followed through until resolution.</li>
-                    <li>Handled escalated customer concerns with patience, professionalism, and clear communication, helping maintain strong service quality and customer satisfaction.</li>
-                    <li>Maintained organized records and daily operational accuracy, supporting reliable service and effective team coordination.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Education & Certifications</h2>
-            
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">AEC Preparation for Cisco CCNA & CompTIA Linux+ Certification</div>
-                    <div class="item-date">March 2026 – Present</div>
-                </div>
-                <div class="item-subtitle">Dawson College, Montreal, QC</div>
-                <ul>
-                    <li>Receiving hands-on training in network design, configuration, troubleshooting, Linux administration, and technical client support.</li>
-                    <li>Building practical skills in diagnosing connectivity and system issues in lab-based environments aligned with entry-level support roles.</li>
-                </ul>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Google IT Support Professional Certificate</div>
-                    <div class="item-date">Completed October 2025</div>
-                </div>
-                <ul>
-                    <li>Completed training in IT support fundamentals, networking, operating systems, system administration, and IT security.</li>
-                </ul>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Microsoft Azure Fundamentals (AZ-900) | AI on Azure Microsoft</div>
-                    <div class="item-date">Completed January 2025</div>
-                </div>
-                <ul>
-                    <li>Validated knowledge of core cloud concepts, Azure services, pricing models, governance, security, and shared responsibility.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Additional Information</h2>
-            <p>Strong interest in technical troubleshooting, home networking, PC building, and continuous IT learning. Currently pursuing skills relevant to client support, issue resolution, and junior network support roles through formal study and home lab practice.</p>
-        </section>
-
-        <section class="cta-section">
-            <h2>Ready to work together?</h2>
-            <p>I am currently open to new opportunities. Let's connect!</p>
-            <a href="mailto:renatokmontreal@gmail.com" class="btn" style="background-color: var(--text-color);">✉️ Send an Email</a>
-        </section>
+      <div class="button-row">
+        <a class="btn btn-primary" href="Renato-Kitamura-Morao.docx" target="_blank">View Resume</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/renatokitamura/" target="_blank">LinkedIn</a>
+        <a class="btn btn-secondary" href="mailto:renatokmontreal@gmail.com">Email Me</a>
+        <a class="btn btn-secondary" href="#projects">View Projects</a>
+      </div>
     </div>
+  </header>
 
+  <main>
+    <div class="container">
+      <section id="about">
+        <h2>About Me</h2>
+        <p class="section-intro">
+          I’m making a career transition into IT after several years in customer-facing operations. What draws me to
+          technical support is the combination of troubleshooting, communication, continuous learning, and helping users
+          solve real problems.
+        </p>
+        <p class="section-intro">
+          Through formal training and self-directed labs, I’ve built practical experience with Windows, Linux,
+          Active Directory, networking fundamentals, virtualization, and remote support tools. I’m especially interested
+          in roles where I can support users, improve processes, and continue growing in system administration,
+          networking, and cloud fundamentals.
+        </p>
+      </section>
+
+      <section id="highlights">
+        <h2>What I Bring</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Technical Foundations</h3>
+            <p>Hands-on support fundamentals in Windows, Linux, networking, and Active Directory.</p>
+          </div>
+          <div class="card">
+            <h3>Lab Experience</h3>
+            <p>Practical work with VirtualBox, Linux services, command-line tools, and troubleshooting workflows.</p>
+          </div>
+          <div class="card">
+            <h3>Documentation Skills</h3>
+            <p>Experience creating SOPs and training materials with a focus on clarity and consistency.</p>
+          </div>
+          <div class="card">
+            <h3>Customer Service</h3>
+            <p>Strong communication and issue-resolution skills developed in fast-paced, high-pressure environments.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <h2>Certifications & Training</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>AEC: Cisco CCNA &amp; CompTIA Linux+ Preparation</h3>
+            <p><strong>Dawson College</strong> | March 2026 – Present</p>
+            <p>Hands-on training in network design, troubleshooting, Linux administration, and technical client support.</p>
+          </div>
+          <div class="card">
+            <h3>Google IT Support Professional Certificate</h3>
+            <p><strong>Coursera</strong> | Completed October 2025</p>
+            <p>Training in IT support fundamentals, networking, operating systems, system administration, and IT security.</p>
+          </div>
+          <div class="card">
+            <h3>Microsoft Azure Fundamentals (AZ-900)</h3>
+            <p><strong>Microsoft</strong> | In Progress</p>
+            <p>Building knowledge of cloud concepts, Azure services, governance, pricing, and security fundamentals.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="card project">
+          <h3>Virtualization &amp; Active Directory Home Lab</h3>
+          <p class="project-meta">Windows Server | VirtualBox | Active Directory</p>
+          <p>
+            Built a Windows Server environment in VirtualBox to simulate a small business network and practice core
+            administration tasks.
+          </p>
+          <ul>
+            <li>Configured an Active Directory domain controller.</li>
+            <li>Managed user accounts, groups, and password policies.</li>
+            <li>Tested connectivity and troubleshooting scenarios using ping, tracert, and nslookup.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Active Directory</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Virtualization</span>
+            <span class="tag">Troubleshooting</span>
+          </div>
+        </div>
+
+        <div class="card project">
+          <h3>Linux Server Administration Lab</h3>
+          <p class="project-meta">Linux | Samba | Apache | Dovecot | Bash</p>
+          <p>
+            Installed multiple Linux distributions in virtual machines and practiced service configuration,
+            command-line administration, and troubleshooting.
+          </p>
+          <ul>
+            <li>Installed several Linux versions using VMs.</li>
+            <li>Configured Samba, Apache, and Dovecot services.</li>
+            <li>Wrote basic shell scripts for administration and troubleshooting tasks.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Linux Administration</span>
+            <span class="tag">Service Configuration</span>
+            <span class="tag">Shell Scripting</span>
+            <span class="tag">Virtual Machines</span>
+          </div>
+        </div>
+
+        <div class="card project">
+          <h3>Remote Technology Volunteer Support</h3>
+          <p class="project-meta">Take Trips MES | Google Workspace | GoDaddy</p>
+          <p>
+            Provide remote technical support for a nonprofit team by helping maintain smooth virtual operations
+            and assisting users with onboarding and platform issues.
+          </p>
+          <ul>
+            <li>Support onboarding for new members, including account access and platform setup.</li>
+            <li>Troubleshoot basic user issues and help team members navigate online systems.</li>
+            <li>Assist with Google Workspace and GoDaddy-related tasks to support communication and operations.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Remote Support</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">User Onboarding</span>
+            <span class="tag">Documentation</span>
+          </div>
+        </div>
+
+        <div class="card project">
+          <h3>Networking Practice &amp; Troubleshooting</h3>
+          <p class="project-meta">CCNA Labs | TCP/IP | DNS | DHCP | IPv4/IPv6</p>
+          <p>
+            Practice networking concepts through lab exercises focused on connectivity, addressing, and troubleshooting.
+          </p>
+          <ul>
+            <li>Worked with TCP/IP, DNS, DHCP, IPv4/IPv6, and Wi-Fi basics.</li>
+            <li>Practiced basic router and switch configuration.</li>
+            <li>Used troubleshooting methods to identify and resolve simulated network issues.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Networking</span>
+            <span class="tag">CCNA</span>
+            <span class="tag">Diagnostics</span>
+            <span class="tag">Connectivity Testing</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="two-column">
+          <div class="card">
+            <h3>Technology Volunteer</h3>
+            <p><strong>Take Trips MES</strong> | Remote | June 2026 – Present</p>
+            <p>
+              Support day-to-day technical operations for a nonprofit team by helping troubleshoot user issues,
+              assisting with onboarding, and supporting communication across digital platforms.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Kitchen Manager / Sous-Chef</h3>
+            <p><strong>Zante Restaurant</strong> | Montreal, QC | April 2022 – Present</p>
+            <p>
+              Created training documentation, coordinated with vendors and support contacts, and resolved operational
+              issues in a fast-paced environment. This experience strengthened my communication, documentation,
+              prioritization, and problem-solving skills.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tools">
+        <h2>Tools &amp; Technologies</h2>
+        <div class="tag-list">
+          <span class="tag">Windows 10/11</span>
+          <span class="tag">Linux</span>
+          <span class="tag">VirtualBox</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">TCP/IP</span>
+          <span class="tag">DNS</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">IPv4/IPv6</span>
+          <span class="tag">Ping</span>
+          <span class="tag">Tracert</span>
+          <span class="tag">Nslookup</span>
+          <span class="tag">RDP</span>
+          <span class="tag">TeamViewer</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">GoDaddy</span>
+          <span class="tag">Samba</span>
+          <span class="tag">Apache</span>
+          <span class="tag">Dovecot</span>
+          <span class="tag">Basic Shell Scripting</span>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Let’s Connect</h2>
+        <p class="section-intro">
+          I’m currently seeking entry-level opportunities in help desk, technical support, and junior IT roles where I can
+          contribute, keep learning, and grow into networking, systems, and cloud support.
+        </p>
+        <div class="card">
+          <p><strong>Email:</strong> <a href="mailto:renatokmontreal@gmail.com">renatokmontreal@gmail.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/renatokitamura/" target="_blank">linkedin.com/in/renatokitamura</a></p>
+          <p><strong>Location:</strong> Brossard, Québec</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Renato Kitamura Morao | IT Support Portfolio</p>
+    </div>
+  </footer>
 </body>
 </html>
