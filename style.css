@@ -219,3 +219,35 @@ footer {
     font-size: 1rem;
   }
 }
+
+.featured-project {
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 10px 28px rgba(14, 165, 233, 0.08);
+}
+
+.featured-project h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  margin-bottom: 18px;
+}
+
+.project-links {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.small-note {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
